@@ -1,5 +1,6 @@
 <div>
     <form>
+        <h1>{{ session('success') }}</h1>
         <input wire:model="name" type="text" placeholder="name">
         @error('name')
             {{ $message }}
@@ -19,4 +20,7 @@
     @foreach ($user as $us)
         <h1>{{ $us->name }}</h1>
     @endforeach
+
+    {{-- paginate --}}
+    {{-- {{ $user->links() }} --}}
 </div>
