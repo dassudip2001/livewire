@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Ctegory;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
 });
+
+
+
+// Route::middleware(['web', 'auth', 'approval'])->group(function () {
+//     // Your routes for approved sellers
+// });
